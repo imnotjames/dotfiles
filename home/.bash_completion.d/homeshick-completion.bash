@@ -1,0 +1,1 @@
+/home/james/.homesick/repos/homeshick/completions/homeshick-completion.bash

@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+$HOME/.bin/git-current-branch.bash | sed 's/[^a-zA-Z0-9]/-/g

@@ -1,0 +1,31 @@
+[user]
+	email = jame@notjam.es
+	name = James Ward
+
+[diff]
+	tool = meld
+
+[alias]
+
+	meld = "!git-meld"
+	undo = "!git-undo"
+	current-branch = "!git-current-branch"
+	slug-branch = "!git-slug-current-branch"
+
+	rb = "!git-review-board"
+
+	meldrb = "!f() { MERGE_BASE=$(git merge-base ${1-'origin/master'} ${2-'HEAD'}); git difftool -d -M --minimal --full-index $MERGE_BASE ${2-'HEAD'}; }; f"
+	orphank = "!gitk --all `git reflog | cut -c1-7`&"
+
+
+[push]
+	default = simple
+
+[commit]
+	template = ~/.gitmessage
+
+[merge]
+	ff = only
+
+[fetch]
+	prune = true

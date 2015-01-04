@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+MERGE_BASE=$(git merge-base ${1-'origin/master'} ${2-'HEAD'})
+
+git diff -M --minimal --full-index $MERGE_BASE ${2-'HEAD'}
