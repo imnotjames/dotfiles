@@ -19,3 +19,5 @@ source .bash_theme
 [ "$(ls -A $HOME/.bash_completion.d/ | grep '\.bash$')" ] && source $HOME/.bash_completion.d/*.bash
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+
+homeshick --quiet refresh
