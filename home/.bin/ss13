@@ -1,4 +1,5 @@
-#!/bin/bash
+#!/usr/bin/env sh
+
 export WINEARCH=win32
 export WINEPREFIX=$HOME/.wine32_ss13/
 export WINEDEBUG=-all

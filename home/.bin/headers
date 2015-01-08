@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env sh
 
 # Curl headers.
 # https://github.com/rtomayko/dotfiles/blob/rtomayko/bin/headers

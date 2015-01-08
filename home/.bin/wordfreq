@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env sh
 
 cat "$1" | \
 awk 'f>1;/---/{f+=1}' | \
