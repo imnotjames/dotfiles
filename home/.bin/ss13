@@ -7,6 +7,21 @@ export WINEDEBUG=-all
 
 if [[ -z "$1" ]]; then
 	wine "C:/Program Files/Byond/bin/byond.exe"
+elif [[ "$1" == "setup" ]]; then
+	wineboot
+	winetricks wsh56 wsh57 jscript mfc42 vcrun6
+	winetricks ie7
+	winetricks ie8
+
+	TMP_EXE_FILE=$(mktemp)
+
+	BUILD_EXE=$(wget -o /dev/null -O - http://www.byond.com/download/ | grep -Po 'build/[^"]+_byond.exe' | head -n1)
+	wget -O $TMP_EXE_FILE "http://www.byond.com/download/$BUILD_EXE"
+
+	wine $TMP_EXE_FILE
+
+	rm $TMP_EXE_FILE
+
 elif [[ "$1" == "winecfg" || "$1" == "cfg" ]]; then
 	winecfg
 else
