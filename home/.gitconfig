@@ -9,6 +9,9 @@
 
 	meld = "!git-meld"
 	undo = "!git-undo"
+
+	repository-name = "!git-repository-name"
+
 	current-branch = "!git-current-branch"
 	slug-branch = "!git-slug-current-branch"
 

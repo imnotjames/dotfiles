@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+
+TOP_LEVEL="$(/usr/bin/env git rev-parse --show-toplevel)"
+
+
+basename $TOP_LEVEL
+
