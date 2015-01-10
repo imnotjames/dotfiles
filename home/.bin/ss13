@@ -15,7 +15,13 @@ elif [[ "$1" == "setup" ]]; then
 
 	TMP_EXE_FILE=$(mktemp)
 
-	BUILD_EXE=$(wget -o /dev/null -O - http://www.byond.com/download/ | grep -Po 'build/[^"]+_byond.exe' | head -n1)
+	if [[ "$2" == "--beta" ]]; then
+		BUILD_EXE=$(wget -o /dev/null -O - http://www.byond.com/download/ | grep -Po 'build/[^"]+_byond.exe' | tail -n1)
+	else
+		BUILD_EXE=$(wget -o /dev/null -O - http://www.byond.com/download/ | grep -Po 'build/[^"]+_byond.exe' | head -n1)
+	fi
+
+
 	wget -O $TMP_EXE_FILE "http://www.byond.com/download/$BUILD_EXE"
 
 	wine $TMP_EXE_FILE
