@@ -1,25 +1,58 @@
 #!/usr/bin/env sh
 
-export WINEARCH=win32
-export WINEPREFIX=$HOME/.wine32_ss13/
-export WINEDEBUG=-all
-# export WINEDEBUG=+tid,+mmdevapi,+winmm,+driver,+msacm,+midi,+dsound,+dsound3d,+dmusic,+mci,+oss,+alsa,+coreaudio
+die() {
+	echo $1
 
-if [[ -z "$1" ]]; then
-	wine "C:/Program Files/Byond/bin/byond.exe"
-elif [[ "$1" == "--help" || "$1" == "-h" ]]; then
+	exit 1
+}
+
+command_exists() {
+	command -v "$1" &> /dev/null
+
+	RETURN_VALUE="$?"
+
+	if [[ "$RETURN_VALUE" == "0" ]]; then
+		return 0
+	else
+		return 1
+	fi
+}
+
+execute_wine_command () {
+	/usr/bin/env \
+		WINEARCH="win32" \
+		WINEPREFIX="$HOME/.wine32_ss13/" \
+		WINEDEBUG="-all" \
+		wine $@
+}
+
+execute_winetricks_command () {
+	/usr/bin/env \
+		WINEARCH="win32" \
+		WINEPREFIX="$HOME/.wine32_ss13/" \
+		WINEDEBUG="-all" \
+		winetricks $@
+}
+
+command_exists "wine" || die "wine is not installed"
+command_exists "winetricks" || die "winetricks is not installed"
+command_exists "wget" || die "wget is not installed"
+
+if [[ "$1" == "--help" || "$1" == "-h" ]]; then
 
 	echo "usage: ss13 [other.exe]"
 	echo "       ss13 setup [--beta]"
 	echo "       ss13 cfg"
 
 elif [[ "$1" == "setup" ]]; then
-	wineboot
-	winetricks wsh56 wsh57 jscript mfc42 vcrun6
-	winetricks ie7
-	winetricks ie8
 
-	TMP_EXE_FILE=$(mktemp)
+	execute_wine_command "wineboot"
+
+	execute_winetricks_command wsh56 wsh57 jscript mfc42 vcrun6
+	execute_winetricks_command ie7
+	execute_winetricks_command ie8
+
+	TMP_EXE_FILE="$(mktemp)"
 
 	if [[ "$2" == "--beta" ]]; then
 		BUILD_EXE=$(wget -o /dev/null -O - http://www.byond.com/download/ | grep -Po 'build/[^"]+_byond.exe' | tail -n1)
@@ -28,14 +61,24 @@ elif [[ "$1" == "setup" ]]; then
 	fi
 
 
+	echo "Downloading $BUILD_EXE..."
+
 	wget -O $TMP_EXE_FILE "http://www.byond.com/download/$BUILD_EXE"
 
-	wine $TMP_EXE_FILE
+	execute_wine_command $TMP_EXE_FILE
 
 	rm $TMP_EXE_FILE
 
 elif [[ "$1" == "winecfg" || "$1" == "cfg" ]]; then
-	winecfg
+
+	execute_wine_command "winecfg"
+
+elif [[ $# -gt 0 ]]; then
+
+	execute_wine_command $@
+
 else
-	wine "$1"
+
+	execute_wine_command "C:/Program Files/Byond/bin/byond.exe"
+
 fi
