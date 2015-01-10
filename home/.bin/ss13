@@ -7,6 +7,12 @@ export WINEDEBUG=-all
 
 if [[ -z "$1" ]]; then
 	wine "C:/Program Files/Byond/bin/byond.exe"
+elif [[ "$1" == "--help" || "$1" == "-h" ]]; then
+
+	echo "usage: ss13 [other.exe]"
+	echo "       ss13 setup [--beta]"
+	echo "       ss13 cfg"
+
 elif [[ "$1" == "setup" ]]; then
 	wineboot
 	winetricks wsh56 wsh57 jscript mfc42 vcrun6
