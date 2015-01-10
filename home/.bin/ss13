@@ -23,7 +23,7 @@ execute_wine_command () {
 		WINEARCH="win32" \
 		WINEPREFIX="$HOME/.wine32_ss13/" \
 		WINEDEBUG="-all" \
-		wine $@
+		wine "$@"
 }
 
 execute_winetricks_command () {
@@ -31,7 +31,7 @@ execute_winetricks_command () {
 		WINEARCH="win32" \
 		WINEPREFIX="$HOME/.wine32_ss13/" \
 		WINEDEBUG="-all" \
-		winetricks $@
+		winetricks "$@"
 }
 
 command_exists "wine" || die "wine is not installed"
