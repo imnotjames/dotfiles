@@ -1,8 +1,8 @@
 [Unit]
-Description=Email people a status update because I can't be arsed
+Description=Timer to email people a status message
 
 [Timer]
-OnCalendar=13:45:00
+OnCalendar=09:30:00
 Persistent=true
 
 [Install]
