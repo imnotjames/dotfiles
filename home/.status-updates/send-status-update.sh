@@ -21,5 +21,5 @@ fi
 COMPLETE_MESSAGE=$(printf "$TEMPLATE" "$MESSAGE")
 
 echo "$COMPLETE_MESSAGE" | mail \
-	-s "Status and Deploy Update for $(date +%D)" \
+	-s "[Deploys] Status and Deploy Update for $(date +%D)" \
 	${TO_EMAILS}
