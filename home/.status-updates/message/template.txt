@@ -1,0 +1,6 @@
+Hello,
+
+%s
+
+Cheers,
+James Ward

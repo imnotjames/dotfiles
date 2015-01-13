@@ -1,0 +1,9 @@
+[Unit]
+Description=Email people a status update because I can't be arsed
+
+[Timer]
+OnCalendar=13:45:00
+Persistent=true
+
+[Install]
+WantedBy=timers.target
