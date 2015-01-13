@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+cd $HOME/.status-updates
+
 TO_EMAILS="$(< recipients.conf)"
 
 TODAYS_MESSAGE_FILE="message/status/$(date +%d-%m-%Y).txt"
