@@ -14,7 +14,7 @@ export PATH="$(gem environment gempath):$PATH"
 
 alias ls='ls --color=auto'
 
-source .bash_theme
+source "$HOME/.bash_theme"
 
 [ "$(ls -A $HOME/.bash_completion.d/ | grep '\.bash$')" ] && source $HOME/.bash_completion.d/*.bash
 
