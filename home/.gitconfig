@@ -10,6 +10,7 @@
 	meld = "!git-meld"
 	undo = "!git-undo"
 	forest = "!git-forest"
+	whoami = "!git-whoami"
 
 	repository-name = "!git-repository-name"
 
