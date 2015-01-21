@@ -9,6 +9,7 @@
 
 	meld = "!git-meld"
 	undo = "!git-undo"
+	forest = "!git-forest"
 
 	repository-name = "!git-repository-name"
 
@@ -20,6 +21,7 @@
 	meldrb = "!f() { MERGE_BASE=$(git merge-base ${1-'origin/master'} ${2-'HEAD'}); git difftool -d -M --minimal --full-index $MERGE_BASE ${2-'HEAD'}; }; f"
 	orphank = "!gitk --all `git reflog | cut -c1-7`&"
 
+	tree = "forest --pretty=format:\"%C(red)%h %C(magenta)(%ar) %C(blue)%an %C(reset)%s\" --style=15 --reverse"
 
 [push]
 	default = simple
