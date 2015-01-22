@@ -42,6 +42,7 @@ fi
 echo "Sending status update to ${TO_EMAILS}"
 
 echo "$COMPLETE_MESSAGE" | mail \
+	-vv \
 	-s "$SUBJECT" \
 	-b "${BCC_EMAILS}" \
 	"${TO_EMAILS}"
