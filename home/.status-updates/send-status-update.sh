@@ -33,6 +33,8 @@ SUBJECT=$(date +"$SUBJECT")
 
 COMPLETE_MESSAGE=$(printf "$TEMPLATE" "$MESSAGE")
 
+STATUS_LINE=$(printf "\n\n\nSent on $(date) from $(hostname)")
+
 if [[ -z "$TO_EMAILS" ]]; then
 	echo "Error: No emails to send to"
 
@@ -41,7 +43,7 @@ fi
 
 echo "Sending status update to ${TO_EMAILS}"
 
-echo "$COMPLETE_MESSAGE" | mail \
+echo "$COMPLETE_MESSAGE$STATUS_LINE" | mail \
 	-vv \
 	-s "$SUBJECT" \
 	-b "${BCC_EMAILS}" \
