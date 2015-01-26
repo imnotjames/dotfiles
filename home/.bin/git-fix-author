@@ -1,0 +1,18 @@
+#!/bin/bash
+
+git filter-branch -f --env-filter '
+MY_NAME="$(git config user.name)"
+MY_EMAIL="$(git config user.email)"
+
+if [ "$GIT_COMMITTER_NAME" = "$MY_NAME" ] || [ "$GIT_COMMITTER_EMAIL" = "$MY_EMAIL" ];
+then
+    GIT_COMMITTER_NAME="$MY_NAME";
+    GIT_COMMITTER_EMAIL="$MY_EMAIL";
+fi
+
+if [ "$GIT_AUTHOR_NAME" = "$MY_NAME" ] || [ "$GIT_AUTHOR_EMAIL" = "$MY_EMAIL" ];
+then
+    GIT_AUTHOR_NAME="$MY_NAME";
+    GIT_AUTHOR_EMAIL="$MY_EMAIL";
+fi
+' -- --all
