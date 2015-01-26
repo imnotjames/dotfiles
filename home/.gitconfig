@@ -7,17 +7,9 @@
 
 [alias]
 
-	meld = "!git-meld"
-	undo = "!git-undo"
-	forest = "!git-forest"
-	whoami = "!git-whoami"
+	slug-branch = "slug-current-branch"
 
-	repository-name = "!git-repository-name"
-
-	current-branch = "!git-current-branch"
-	slug-branch = "!git-slug-current-branch"
-
-	rb = "!git-review-board"
+	rb = "review-board"
 
 	meldrb = "!f() { MERGE_BASE=$(git merge-base ${1-'origin/master'} ${2-'HEAD'}); git difftool -d -M --minimal --full-index $MERGE_BASE ${2-'HEAD'}; }; f"
 	orphank = "!gitk --all `git reflog | cut -c1-7`&"
