@@ -23,7 +23,13 @@ __PS1_HOST="${__PS1_SEPARATOR}$sq_color[$text_color$user_color\u ${text_color}at
 __PS1_GIT="\$(__git_ps1 \"${__PS1_SEPARATOR}$sq_color[$text_color%s$sq_color]\")"
 __PS2_SEPARATORS=$(for i in {1..6}; do  echo -n ${__PS1_SEPARATOR}; done)
 
-__PS1_LINE_1="${__PS1_BAD_COMMAND}${__PS1_TIME}${__PS1_HOST}${__PS1_GIT}"
+if [[ -z "$WINDOW" ]]; then
+	__PS1_SCREEN=""
+else
+	__PS1_SCREEN="${__PS1_SEPARATOR}$sq_color[$text_color${WINDOW}$sq_color]"
+fi
+
+__PS1_LINE_1="${__PS1_BAD_COMMAND}${__PS1_TIME}${__PS1_HOST}${__PS1_GIT}${__PS1_SCREEN}"
 __PS1_LINE_2="${__PS1_SEPARATOR}> $text_color$path_color\W$sq_color $ $text_color>> "
 
 export PS1="$sq_color\342\224\214${__PS1_LINE_1}\n\342\224\224${__PS1_SEPARATOR}${__PS1_LINE_2}$reset_color"
