@@ -52,6 +52,9 @@ else
 	echo "$MESSAGE" >> "$TEMPORARY_FILE"
 fi
 
-cat "$TEMPORARY_FILE" | grep -v '^\s*#' > "$CHOSEN_MESSAGE_FILE"
+cat "$TEMPORARY_FILE" \
+	| grep -v '^\s*#' \
+	| sed '/^$/N;/\n$/D' \
+	> "$CHOSEN_MESSAGE_FILE"
 
 rm "$TEMPORARY_FILE"
