@@ -6,6 +6,7 @@
 	tool = meld
 
 [alias]
+	squash = "merge --ff --squash"
 
 	slug-branch = "slug-current-branch"
 
