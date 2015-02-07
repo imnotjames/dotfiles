@@ -28,3 +28,6 @@
 
 [fetch]
 	prune = true
+
+[receive]
+	denyCurrentBranch = updateInstead
