@@ -3,11 +3,22 @@
 CHOSEN_DATE="$(date +%d-%m-%Y)"
 MESSAGE=""
 
-OPTIONS=`getopt -o d::m:: --long date:message: -n "update-status-message" -- "$@"`
+OPTIONS=`getopt -o hd:m: --long help,date:,message: -n "update-status-message" -- "$@"`
+
+if [[ "$?" -ne "0" ]]; then	
+	exit
+fi
+
 eval set -- "$OPTIONS"
 
 while true; do
 	case "$1" in
+		-h|--help)
+			echo "update-status-message [-d date-string] [-m message]"
+
+			exit 1
+			;;
+
 		-d|--date)
 			CHOSEN_DATE="$(date --date="$2" +%d-%m-%Y)"
 
