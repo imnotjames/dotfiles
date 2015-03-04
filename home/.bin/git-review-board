@@ -1,5 +1,25 @@
 #!/usr/bin/env sh
 
-MERGE_BASE=$(git merge-base ${1-'origin/master'} ${2-'HEAD'})
+if [ -d .git/svn  ] && [ x != x"$(ls -A .git/svn/)" ]; then
+	TRUNK_HASH=`git show-ref --hash remotes/git-svn`
+	REV=`git svn find-rev "$TRUNK_HASH"`
+	git diff --no-prefix $* remotes/git-svn |
+		sed "
+			# New files have /dev/null as their original path
+			/^--- \/dev\/null/{
+				# Read a line into the pattern space
+				N
+				# Do a multiline substitution
+				s/^--- \/dev\/null\n+++ \(.*\)$/--- \1\t(revision 0)\n+++ \1\t (working copy)/
+				# Jump to the end of the script. This skips the next two substitutions
+				b end
+			}
+			s/^+++ .*/&\t(working copy)/
+			s/^--- .*/&\t(revision $REV)/
+			: end
+		";
+else
+	MERGE_BASE=$(git merge-base ${1-'origin/master'} ${2-'HEAD'})
 
-/usr/bin/env git diff -M --minimal --full-index $MERGE_BASE ${2-'HEAD'}
+	/usr/bin/env git diff -M --minimal --full-index $MERGE_BASE ${2-'HEAD'}
+fi
