@@ -26,6 +26,8 @@ for file in $LIST; do
 	fi
 done
 
-if [ "$FOUND_ERROR" ]; then
-    exit 1
+if [[ "$FOUND_ERROR" == "true" ]]; then
+	exit 1
+else
+	exit 0
 fi
