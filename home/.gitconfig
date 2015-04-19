@@ -6,6 +6,9 @@
 	tool = meld
 
 [alias]
+	standup = shortlog --since=yesterday
+	today = shortlog --since=midnight
+
 	squash = "merge --ff --squash"
 
 	slug-branch = "slug-current-branch"
