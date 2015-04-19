@@ -7,7 +7,7 @@ TEXT_UNDERLINE="\\0033[4m"
 TEXT_BOLD="\\0033[1m"
 
 # Add or remove keywords here
-KEYWORDS_REGEX="var_dump\(|die\(|Zend_Debug::|print_r\("
+KEYWORDS_REGEX="\bvar_dump\(|\bdie\(|\bZend_Debug::|\bprint_r\("
 # Add extensions to check here
 EXTENSIONS_REGEX="(.php$)"
 
