@@ -12,17 +12,20 @@ LIST=$(git diff-index --cached --name-only --diff-filter=ACMR HEAD)
 FOUND_ERROR=false
 
 for file in $LIST; do
-	EXTENSION=$(echo "$file" | grep ".php$")
+	EXTENSION=$(echo "$file" | grep "\.php$")
 
 	if [ "$EXTENSION" != "" ]; then
-		ERRORS=$(php -l $ROOT_DIR$file 2>&1 | grep "Parse error")
+		ERRORS=$(php -l "${ROOT_DIR}${file}" 2>&1 | grep "Parse error")
 		if [ "$ERRORS" != "" ]; then
+			FOUND_ERROR=true
+
 			echo -e "${TEXT_ERROR}Syntax errors found in ${TEXT_BOLD}$file${TEXT_DEFAULT}"
 			echo -e "$ERRORS"
 			echo
 		fi
 	fi
 done
-if [ $FOUND_ERROR ]; then
+
+if [ "$FOUND_ERROR" ]; then
     exit 1
 fi
