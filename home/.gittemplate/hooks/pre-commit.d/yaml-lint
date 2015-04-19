@@ -1,0 +1,37 @@
+#!/usr/bin/env bash
+
+TEXT_DEFAULT="\\033[0;39m"
+TEXT_INFO="\\033[1;32m"
+TEXT_ERROR="\\033[1;31m"
+TEXT_UNDERLINE="\\0033[4m"
+TEXT_BOLD="\\0033[1m"
+
+# Add extensions to check here
+EXTENSIONS_REGEX=".yml$"
+
+ERROR_FOUND=false
+
+FILES=$(git diff-index --cached --name-only --diff-filter=ACMR HEAD)
+
+for FILE in $FILES; do 
+     if [[ "$FILE" =~ $EXTENSIONS_REGEX ]]; then
+	ERRORS=$(yamlcheck "$FILE" 2>&1)
+
+        if [[ "$?" -ne "0" ]]; then
+            ERROR_FOUND=true
+
+            ERRORS=$(echo "$ERRORS" | grep -v "^Error in ")
+
+            echo -e "${TEXT_ERROR}Invalid YAML found in $TEXT_BOLD$FILE\n$TEXT_DEFAULT$ERRORS"
+            echo
+        fi
+     fi
+done
+
+if [ "$ERROR_FOUND" ]; then
+    exit 1
+else
+    exit 0
+fi
+
+
