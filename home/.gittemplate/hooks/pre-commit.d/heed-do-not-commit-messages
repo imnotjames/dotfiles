@@ -31,7 +31,7 @@ for FILE in $FILES; do
 	while IFS=: read -ra RESULT; do
 		if [ "$RESULT" != "" ]; then
 			ERRORS="$ERRORS\nline $TEXT_BOLD${RESULT[1]}$TEXT_DEFAULT: "
-			ERRORS="$ERRORS"$(sed -n ${RESULT[1]}p $FILE | $SED_EXTENDED_CMD "s/do not commit/\\$TEXT_UNDERLINE\1\\$TEXT_DEFAULT/gI")
+			ERRORS="$ERRORS"$(sed -n ${RESULT[1]}p $FILE | $SED_EXTENDED_CMD "s/(do not commit)/\\$TEXT_UNDERLINE\1\\$TEXT_DEFAULT/gI")
 
 			ERROR_FOUND=true
 		fi
