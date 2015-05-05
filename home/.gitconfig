@@ -9,6 +9,7 @@
 	tool = meld
 
 [alias]
+	my-standup = "!git shortlog --since='yesterday midnight' --author=\"$(git config user.name)\""
 	standup = "shortlog --since='yesterday midnight'"
 	today = "shortlog --since='midnight'"
 
