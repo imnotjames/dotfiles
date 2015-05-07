@@ -9,8 +9,8 @@
 	tool = meld
 
 [alias]
-	my-standup = "!git shortlog --since='yesterday midnight' --author=\"$(git config user.name)\""
-	standup = "shortlog --since='yesterday midnight'"
+	my-standup = "!f() { git shortlog --since=\"${1-'yesterday midnight'}\" --author=\"${2-$(git config user.name)}\"; }; f"
+	standup = "!f() { git shortlog --since=\"${1-'yesterday midnight'}\"; }; f"
 	today = "shortlog --since='midnight'"
 
 	squash = "merge --ff --squash"
