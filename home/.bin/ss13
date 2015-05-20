@@ -54,10 +54,12 @@ elif [[ "$1" == "setup" ]]; then
 
 	TMP_EXE_FILE="$(mktemp)"
 
+	BUILD_REGEX='.\+href="\([^"]\+_byond.exe\)".\+'
+
 	if [[ "$2" == "--beta" ]]; then
 		BUILD_EXE=$(wget -o /dev/null -O - http://www.byond.com/download/ | grep -Po 'build/[^"]+_byond.exe' | tail -n1)
 	else
-		BUILD_EXE=$(wget -o /dev/null -O - http://www.byond.com/download/ | grep -Po 'build/[^"]+_byond.exe' | head -n1)
+		BUILD_EXE=build/LATEST/$(wget -o /dev/null -O - http://www.byond.com/download/build/LATEST/ | grep -i "$BUILD_REGEX" | sed "s/$BUILD_REGEX/\1/gi" | tail -n1)
 	fi
 
 
