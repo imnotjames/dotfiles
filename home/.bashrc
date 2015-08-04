@@ -7,7 +7,11 @@
 
 export PATH="$HOME/.bin/:$PATH"
 
-export PATH="$(gem environment gempath):$PATH"
+IFS=':' read -a GEM_PATHS <<< "$(gem environment gempath)"
+
+for gem_path_part in "${GEM_PATHS[@]}"; do
+	export PATH="${gem_path_part}/bin/:$PATH"
+done
 
 # export TERM=xterm-256color
 # export TERM=linux
