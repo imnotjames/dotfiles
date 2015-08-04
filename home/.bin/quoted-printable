@@ -1,0 +1,51 @@
+#!/usr/bin/env perl
+use MIME::QuotedPrint;
+use Getopt::Std;
+
+$Getopt::Std::STANDARD_HELP_VERSION=true;
+
+sub HELP_MESSAGE() {
+	warn "
+Encode string to quoted printable
+
+Usage: quoted-printable [-d] [FILE]
+
+Option         Meaning
+ -d            Decode
+
+Also accepts STDIN
+
+	";
+}
+
+sub init() {
+	getopts('d', \%opts);
+
+	my $input;
+
+	if (@ARGV) {
+		my $filename = $ARGV[0];
+
+		if (open(my $inputfh, '<', $filename)) {
+			local $/;
+			$input = <$inputfh>;
+			close($inputfh);
+		} else {
+			warn "cannot open '$filename': $!";
+			return
+		}
+	} elsif (!-t STDIN) {
+		$input = <STDIN>;
+	} else {
+		HELP_MESSAGE();
+		return
+	}
+
+	if (%opts{d}) {
+		print MIME::QuotedPrint::decode($input);
+	} else {
+		print MIME::QuotedPrint::encode($input);
+	}
+}
+
+init();
