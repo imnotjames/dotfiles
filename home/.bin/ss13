@@ -45,6 +45,9 @@ if [[ "$1" == "--help" || "$1" == "-h" ]]; then
 	echo "       ss13 cfg"
 
 elif [[ "$1" == "setup" ]]; then
+	if [[ "$2" == "--beta" ]]; then
+		echo "Setting up beta byond.."
+	fi
 
 	execute_wine_command "wineboot"
 
