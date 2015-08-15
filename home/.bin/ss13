@@ -51,7 +51,7 @@ elif [[ "$1" == "setup" ]]; then
 
 	execute_wine_command "wineboot"
 
-	execute_winetricks_command wsh56 wsh57 jscript mfc42 vcrun6
+	execute_winetricks_command wsh56 wsh57 jscript mfc42 vcrun2013
 	execute_winetricks_command ie7
 	execute_winetricks_command ie8
 
