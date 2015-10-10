@@ -5,6 +5,11 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# If thefuck is installed set it up
+if hash thefuck 2>/dev/null; then
+	eval $(thefuck --alias)
+fi
+
 export PATH="$HOME/.bin/:$PATH"
 
 IFS=':' read -a GEM_PATHS <<< "$(gem environment gempath)"
