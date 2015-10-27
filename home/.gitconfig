@@ -35,6 +35,9 @@
 [merge]
 	ff = only
 
+[rebase]
+	autostash = true
+
 [fetch]
 	prune = true
 
