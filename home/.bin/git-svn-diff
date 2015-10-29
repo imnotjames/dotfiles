@@ -1,0 +1,32 @@
+#!/usr/bin/env sh
+
+if [ -d .git/svn  ] && [ x != x"$(ls -A .git/svn/)" ]; then
+	TRUNK_HASH=`git show-ref --hash remotes/git-svn`
+	REV=`git svn find-rev "$TRUNK_HASH"`
+else
+	TRUNK_HASH='HEAD'
+	REV=`git rev-list "$TRUNK_HASH" --count`
+fi
+
+git diff --no-prefix $* $TRUNK_HASH |
+	sed "
+		# New files have /dev/null as their original path with git diff
+		/^--- \/dev\/null/{
+			# Read a line into the pattern space
+			N
+			# Do a multiline substitution
+			s/^--- \/dev\/null\n+++ \(.*\)$/--- \1\t(revision 0)\n+++ \1\t (working copy)/
+			# Jump to the end of the script. This skips the next substitution
+			b end
+		}
+
+		# Find other files
+		/^index\s\+[0-9a-f]\+\.\.[0-9a-f]\+\s\+[0-9]\{6\}/{
+			# Read a line into the pattern space
+			N
+			# And another line
+			N
+			s/^\(index\s\+[0-9a-f]\+\.\.[0-9a-f]\+\s\+[0-9]\{6\}\)\n\([^\n]*\)\n\([^\n]*\)/\1\n\2\t(working copy)\n\3\t(revision $REV)/
+		}
+		: end
+	";
