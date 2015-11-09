@@ -26,7 +26,7 @@ git diff --no-prefix $* $TRUNK_HASH |
 			N
 			# And another line
 			N
-			s/^\(index\s\+[0-9a-f]\+\.\.[0-9a-f]\+\s\+[0-9]\{6\}\)\n\([^\n]*\)\n\([^\n]*\)/\1\n\2\t(working copy)\n\3\t(revision $REV)/
+			s/^\(index\s\+[0-9a-f]\+\.\.[0-9a-f]\+\s\+[0-9]\{6\}\)\n\([^\n]*\)\n\([^\n]*\)/\1\n\2\t(revision $REV)\n\3\t(working copy)/
 		}
 		: end
 	";
