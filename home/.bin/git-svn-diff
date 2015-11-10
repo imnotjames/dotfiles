@@ -10,6 +10,16 @@ fi
 
 git diff --no-prefix $* $TRUNK_HASH |
 	sed "
+		# Deleted files have /dev/null as their new path with git diff
+		/^deleted file mode [0-9]\{6\}/{
+			# Read the next few lines into the pattern space
+			N;N;N;N
+			# Do a multiline substitution
+			s/\n--- \(.*\)\n+++ \/dev\/null/\n--- \1\t(revision $REV)\n+++ \1\t(working copy)/
+			# Jump to the end of the script. This skips the next substitution
+			b end
+		}
+
 		# New files have /dev/null as their original path with git diff
 		/^--- \/dev\/null/{
 			# Read a line into the pattern space
