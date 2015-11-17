@@ -1,2 +1,0 @@
-load-module module-alsa-sink device=dmix
-load-module module-alsa-source device=dsnoop
