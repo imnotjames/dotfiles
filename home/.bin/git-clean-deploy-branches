@@ -1,0 +1,4 @@
+#!/usr/bin/env sh
+
+git branch | grep -e '^\s*deploy_' | xargs -- git branch -D
+
