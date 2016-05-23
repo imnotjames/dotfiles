@@ -24,6 +24,7 @@ export PYTHONPATH="./.pip:$PYTHONPATH"
 # export TERM=linux
 
 alias ls='ls --color=auto'
+alias composer='PHP_INI_SCAN_DIR=/dev/null php -c '$HOME'/.composer/php.ini '`which composer`''
 
 source "$HOME/.bash_theme"
 
