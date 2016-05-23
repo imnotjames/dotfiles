@@ -18,6 +18,8 @@ for gem_path_part in "${GEM_PATHS[@]}"; do
 	export PATH="${gem_path_part}/bin/:$PATH"
 done
 
+export PYTHONPATH="./.pip:$PYTHONPATH"
+
 # export TERM=xterm-256color
 # export TERM=linux
 
