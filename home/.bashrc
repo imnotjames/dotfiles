@@ -10,6 +10,12 @@ if hash thefuck 2>/dev/null; then
 	eval $(thefuck --alias)
 fi
 
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_DIRS="/usr/local/share:/usr/share"
+export XDG_CONIFG_DIRS="/etc/xdg"
+
 export PATH="$HOME/.bin/:$PATH"
 
 IFS=':' read -a GEM_PATHS <<< "$(gem environment gempath)"
