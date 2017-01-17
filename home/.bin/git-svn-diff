@@ -17,8 +17,8 @@ else
 	REV=`git rev-list "$TRUNK_HASH" --count`
 fi
 
-git diff --no-prefix $* $TRUNK_HASH |
-	sed "
+git diff --no-prefix $* "$TRUNK_HASH" | \
+	sed -u -e "
 		# Deleted files have /dev/null as their new path with git diff
 		/^deleted file mode [0-9]\{6\}/{
 			# Read the next few lines into the pattern space
