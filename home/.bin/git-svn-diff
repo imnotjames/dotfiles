@@ -25,6 +25,7 @@ git diff --no-prefix $* "$TRUNK_HASH" | \
 			N;N;N;N
 			# Do a multiline substitution
 			s/\n--- \(.*\)\n+++ \/dev\/null/\n--- \1\t(revision $REV)\n+++ \1\t(working copy)/
+
 			# Jump to the end of the script. This skips the next substitution
 			b end
 		}
@@ -35,17 +36,26 @@ git diff --no-prefix $* "$TRUNK_HASH" | \
 			N
 			# Do a multiline substitution
 			s/^--- \/dev\/null\n+++ \(.*\)$/--- \1\t(revision 0)\n+++ \1\t (working copy)/
+
 			# Jump to the end of the script. This skips the next substitution
 			b end
 		}
 
 		# Find other files
 		/^index\s\+[0-9a-f]\+\.\.[0-9a-f]\+\s\+[0-9]\{6\}/{
-			# Read a line into the pattern space
-			N
-			# And another line
-			N
-			s/^\(index\s\+[0-9a-f]\+\.\.[0-9a-f]\+\s\+[0-9]\{6\}\)\n\([^\n]*\)\n\([^\n]*\)/\1\n\2\t(revision $REV)\n\3\t(working copy)/
+			# Replace the first line with the separator
+			s/.\+/===================================================================/
+
+			# Read two lines into the pattern space
+			N;N
+
+			s/^\(=\+\)\n\(.*\)\n\(.*\)/\1\n\2\t(revision $REV)\n\3\t(working copy)/
+
+			# Jump to the end of the script. This skips the next substitution
+			b end
 		}
+
 		: end
+
+		s/^diff --git [^[:space:]]*/Index:/
 	";
