@@ -28,6 +28,7 @@
 
 [push]
 	default = simple
+	followTags = true
 
 [commit]
 	template = ~/.gitmessage
