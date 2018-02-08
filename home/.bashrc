@@ -10,6 +10,8 @@ if hash thefuck 2>/dev/null; then
 	eval $(thefuck --alias)
 fi
 
+eval "$(rbenv init -)"
+
 export JAVA_HOME=/usr/lib/jvm/default-runtime
 
 export XDG_DATA_HOME="$HOME/.local/share"
