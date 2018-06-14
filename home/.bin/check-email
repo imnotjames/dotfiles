@@ -2,6 +2,7 @@
 from smtplib import SMTP, SMTPServerDisconnected, SMTPConnectError
 from email.utils import parseaddr
 import logging
+import sys
 
 logger = logging.getLogger('check-email')
 logger.setLevel(logging.CRITICAL)
@@ -37,24 +38,27 @@ def validate_email(email):
 			smtp = SMTP(timeout=10)
 			smtp.connect(mx[1])
 
+			logger.debug(u'%s: connected', mx[1])
+
 			status, _ = smtp.helo()
+			logger.debug(u'%s: answer: %s - %s', mx[1], status, _)
 
 			if status != 250:
 				smtp.quit()
-				logger.debug(u'%s answer: %s - %s', mx[1], status, _)
 				continue
 			
 			smtp.mail('')
 			status, _ = smtp.rcpt(email)
-			logger.debug(u'%s answer: %s - %s', mx[1], status, _)
+			logger.debug(u'%s: answer: %s - %s', mx[1], status, _)
+
 			if status == 250:
 				smtp.quit()
 				return True
 
-			logger.debug(u'%s answer: %s - %s', mx[1], status, _)
+			logger.debug(u'%s: answer: %s - %s', mx[1], status, _)
 			smtp.quit()
-		except SMTPServerDisconnected:  # Server not permits verify user
-			logger.debug(u'%s disconected.', mx[1])
+		except SMTPServerDisconnected:
+			logger.debug(u'%s: disconected: %s', mx[1], sys.exc_info()[1])
 		except SMTPConnectError:
 			logger.debug(u'Unable to connect to %s.', mx[1])
 
