@@ -10,6 +10,14 @@ if hash thefuck 2>/dev/null; then
 	eval $(thefuck --alias)
 fi
 
+if hash kubectl 2>/dev/null; then
+	source <(kubectl completion bash)
+fi
+
+if hash helm 2>/dev/null; then
+	source <(helm completion bash)
+fi
+
 eval "$(rbenv init -)"
 
 export JAVA_HOME=/usr/lib/jvm/default-runtime
