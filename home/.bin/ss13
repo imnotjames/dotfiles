@@ -78,6 +78,11 @@ elif [[ "$1" == "winecfg" || "$1" == "cfg" ]]; then
 
 	execute_wine_command "winecfg"
 
+
+elif [[ "$1" == "winetricks" || "$1" == "tricks" ]]; then
+
+	execute_winetricks_command ""
+
 elif [[ $# -gt 0 ]]; then
 
 	execute_wine_command $@
