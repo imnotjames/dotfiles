@@ -19,6 +19,11 @@ if hash helm 2>/dev/null; then
 fi
 
 eval "$(rbenv init -)"
+eval "$(pyenv init -)"
+
+if [[ -z "$VIRTUAL_ENV" ]]; then
+	eval "$(pyenv virtualenv-init -)"
+fi
 
 export JAVA_HOME=/usr/lib/jvm/default-runtime
 
@@ -36,7 +41,7 @@ for gem_path_part in "${GEM_PATHS[@]}"; do
 	export PATH="${gem_path_part}/bin/:$PATH"
 done
 
-export PYTHONPATH="./.pip:$PYTHONPATH"
+
 
 # export TERM=xterm-256color
 # export TERM=linux
