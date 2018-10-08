@@ -1,1 +1,3 @@
 # Darwin-specfic bashrc
+
+export TERM=xterm-256color
