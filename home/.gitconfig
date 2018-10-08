@@ -56,3 +56,6 @@
 
 [includeIf "gitdir:~/Projects/forkbombus/"]
 	path = "~/.gitconfig.forkbombus"
+
+[includeIf "gitdir:~/Projects/venmo/"]
+	path = "~/.gitconfig.venmo"
