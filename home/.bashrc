@@ -5,6 +5,12 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+OPERATING_SYSTEM="$(uname -s | tr '[:upper:]' '[:lower:]')"
+
+if [[ -f "${HOME}/.bashrc.${OPERATING_SYSTEM}" ]]; then
+	source "${HOME}/.bashrc.${OPERATING_SYSTEM}"
+fi
+
 # If thefuck is installed set it up
 if hash thefuck 2>/dev/null; then
 	eval $(thefuck --alias)
