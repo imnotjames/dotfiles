@@ -54,7 +54,8 @@ alias composer='php -c '$HOME'/.composer/php.ini '`which composer`''
 
 source "$HOME/.bash_theme"
 
-[ "$(ls -A $HOME/.bash_completion.d/ | grep '\.bash$')" ] && source $HOME/.bash_completion.d/*.bash
+files=$(shopt -s nullglob dotglob; echo $HOME/.bash_completion.d/*.bash)
+[ ${#files[@]} -gt 0 ] && source $HOME/.bash_completion.d/*.bash
 
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 
