@@ -10,19 +10,16 @@ if hash thefuck 2>/dev/null; then
 	eval $(thefuck --alias)
 fi
 
-if hash kubectl 2>/dev/null; then
-	source <(kubectl completion bash)
+if hash rbenv 2>/dev/null; then
+	eval "$(rbenv init -)"
 fi
 
-if hash helm 2>/dev/null; then
-	source <(helm completion bash)
-fi
+if hash pyenv 2>/dev/null; then
+	eval "$(pyenv init -)"
 
-eval "$(rbenv init -)"
-eval "$(pyenv init -)"
-
-if [[ -z "$VIRTUAL_ENV" ]]; then
-	eval "$(pyenv virtualenv-init -)"
+	if [[ -z "$VIRTUAL_ENV" ]]; then
+		eval "$(pyenv virtualenv-init -)"
+	fi
 fi
 
 export JAVA_HOME=/usr/lib/jvm/default-runtime
@@ -35,13 +32,13 @@ export XDG_CONIFG_DIRS="/etc/xdg"
 
 export PATH="$HOME/.bin/:$PATH"
 
-IFS=':' read -a GEM_PATHS <<< "$(gem environment gempath)"
+if hash gem 2>/dev/null; then
+	IFS=':' read -a GEM_PATHS <<< "$(gem environment gempath)"
 
-for gem_path_part in "${GEM_PATHS[@]}"; do
-	export PATH="${gem_path_part}/bin/:$PATH"
-done
-
-
+	for gem_path_part in "${GEM_PATHS[@]}"; do
+		export PATH="${gem_path_part}/bin/:$PATH"
+	done
+fi
 
 # export TERM=xterm-256color
 # export TERM=linux
