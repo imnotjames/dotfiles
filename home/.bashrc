@@ -36,7 +36,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_DIRS="/usr/local/share:/usr/share"
 export XDG_CONIFG_DIRS="/etc/xdg"
 
-export PATH="$HOME/.bin/:$PATH"
+export PATH="$HOME/.bin/:/usr/local/bin:$PATH"
 
 if hash gem 2>/dev/null; then
 	IFS=':' read -a GEM_PATHS <<< "$(gem environment gempath)"
