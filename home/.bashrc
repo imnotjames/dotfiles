@@ -49,7 +49,6 @@ fi
 # export TERM=xterm-256color
 # export TERM=linux
 
-alias ls='ls --color=auto'
 alias composer='php -c '$HOME'/.composer/php.ini '`which composer`''
 
 source "$HOME/.bash_theme"
