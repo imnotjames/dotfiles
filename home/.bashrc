@@ -56,7 +56,13 @@ source "$HOME/.bash_theme"
 files=$(shopt -s nullglob dotglob; echo $HOME/.bash_completion.d/*.bash)
 [ ${#files[@]} -gt 0 ] && source $HOME/.bash_completion.d/*.bash
 
-source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+
+if [[ -f "$HOME/.homesick/repos/homeshick/homeshick.sh" ]]; then
+	export HOMESHICK_DIR="$HOME/.homesick/repos/homeshick"
+elif [[ -f "/usr/local/opt/homeshick/homeshick.sh" ]]; then
+	export HOMESHICK_DIR="/usr/local/opt/homeshick"
+fi
+
+source "$HOMESHICK_DIR/homeshick.sh"
 
 homeshick --quiet refresh
-
