@@ -25,8 +25,18 @@
 	orphank = "!gitk --all `git reflog | cut -c1-7`&"
 
 	tree = "forest --pretty=format:\"%C(red)%h %C(magenta)(%ar) %C(blue)%an %C(reset)%s\" --style=15 --reverse"
-	upstream = "pull --ff-only upstream master"
 
+	# hub aliases
+	browse = "!hub browse"
+	ci-status = "!hub ci-status"
+	compare = "!hub compare"
+	pull-request = "!hub pull-request"
+	issue = "!hub issue"
+	fork = "!hub fork"
+	hub = "!hub"
+
+	sync = "pull --ff-only upstream master"
+	
 [push]
 	default = simple
 	followTags = true

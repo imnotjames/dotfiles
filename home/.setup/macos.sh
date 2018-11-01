@@ -6,6 +6,7 @@ brew install python python2
 brew install thefuck
 brew install kubernetes-helm
 brew install yaml
+brew install hub
 brew cask install meld
 brew cask install jetbrains-toolbox
 brew cask install google-chrome-canary

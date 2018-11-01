@@ -1,3 +1,6 @@
 [user]
 	email = james.ward@venmo.com
 	name = James Ward
+
+[hub]
+	host = github.braintreeps.com
