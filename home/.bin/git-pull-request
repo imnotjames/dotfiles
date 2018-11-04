@@ -3,6 +3,9 @@
 if [[ $1 == "create" ]]; then
 	shift
 	exec hub pull-request $@
+elif [[ $1 == "checkout" ]]; then
+	shift
+	exec hub pr checkout $@
 elif [[ $1 == "list" ]]; then
 	shift
 	exec hub pr list $@
