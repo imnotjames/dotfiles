@@ -11,6 +11,10 @@ if [[ -f "${HOME}/.bashrc.${OPERATING_SYSTEM}" ]]; then
 	source "${HOME}/.bashrc.${OPERATING_SYSTEM}"
 fi
 
+if [[ -f "${HOME}/.bashrc.${HOSTNAME}" ]]; then
+	source "${HOME}/.bashrc.${HOSTNAME}"
+fi
+
 # If thefuck is installed set it up
 if hash thefuck 2>/dev/null; then
 	eval $(thefuck --alias)
