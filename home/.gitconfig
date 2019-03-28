@@ -4,6 +4,7 @@
 
 [core]
 	pager = less -R
+	hooksPath = ~/.githooks/
 
 [diff]
 	tool = meld
@@ -35,7 +36,7 @@
 	hub = "!hub"
 
 	sync = "pull --ff-only upstream master"
-	
+
 [push]
 	default = simple
 	followTags = true
