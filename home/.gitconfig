@@ -35,7 +35,7 @@
 	fork = "!hub fork"
 	hub = "!hub"
 
-	sync = "pull --ff-only upstream master"
+	sync = "!git pull --ff-only upstream $(git symbolic-ref --short HEAD)"
 
 [push]
 	default = simple
