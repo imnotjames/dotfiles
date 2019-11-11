@@ -26,10 +26,6 @@ fi
 
 if hash pyenv 2>/dev/null; then
 	eval "$(pyenv init -)"
-
-	if [[ -z "$VIRTUAL_ENV" ]]; then
-		eval "$(pyenv virtualenv-init -)"
-	fi
 fi
 
 export PATH="$HOME/.bin/:/usr/local/bin:$PATH"
