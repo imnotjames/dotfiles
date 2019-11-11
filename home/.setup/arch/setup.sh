@@ -1,8 +1,11 @@
 #!/bin/bash
 
+set -e
+
 function install_yaourt() {
 	last_pwd=$(pwd)
 	cd /tmp
+	rm -rf /tmp/yaourt-installation
 	mkdir yaourt-installation
 	cd yaourt-installation
 	git clone https://aur.archlinux.org/package-query.git
@@ -12,18 +15,25 @@ function install_yaourt() {
 	cd ../yaourt
 	makepkg -si --noconfirm --needed
 	cd "$last_pwd"
-	rm -rf ./yaourt-install
+	rm -rf /tmp/yaourt-installation
 }
 
-install_yaourt
+su -c 'echo "Server=https://mirrors.kernel.org/archlinux/\$repo/os/\$arch" > /etc/pacman.d/mirrorlist'
 
-yaourt -Syua --noconfirm
-yaourt -S --noconfirm pacman-contrib
+# TODO: Open up the multilib
+
+su -c 'pacman -S --no-confirm --needed sudo base-devel pacman-contrib'
+
+if ! [ -x hash yaourt ]; then
+	install_yaourt
+fi
 
 # Update mirror list
-curl 'https://www.archlinux.org/mirrorlist/?country=all&protocol=http&protocol=https&ip_version=4&ip_version=6' | \
-	sed -i 's/^#Server/Server/' \
-	rankmirrors -n 8 - > /etc/pacman.d/mirrorlist
+curl -s 'https://www.archlinux.org/mirrorlist/?country=US&protocol=https&ip_version=4' | \
+	sed -i 's/^#Server/Server/' |\
+	rankmirrors -n 8 - |\
+	sudo tee -a /etc/pacman.d/mirrorlist >/dev/null
 
+yaourt -Syua --noconfirm
 
-yaourt -S --noconfirm --needed < ./packages
+yaourt -S --noconfirm --needed $(<./packages)
