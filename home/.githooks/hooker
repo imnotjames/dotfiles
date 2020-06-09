@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Runs all executable pre-commit.d/* hooks and exits after,
+# Runs all executable the $hookname.d/* hooks and exits after,
 # if any of them was not successful.
 #
 # Based on
@@ -20,6 +20,11 @@ for hook in $hookdir/$hookname.d/*; do
 	echo "$data" | "$hook"
 	exitcodes+=($?)
 done
+
+if [[ -x "$(pwd)/.git/hooks/$hookname" ]]; then
+	"$(pwd)/.git/hooks/$hookname"
+	exitcodes+=($?)
+fi
 
 for code in "${exitcodes[@]}"; do
 	if [[ "$code" -ne "0" ]]; then
