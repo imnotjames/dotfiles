@@ -65,12 +65,6 @@
 [includeIf "gitdir:~/Projects/imnotjames/"]
 	path = "~/.gitconfig.imnotjames"
 
-[includeIf "gitdir:~/Projects/forkbombus/"]
-	path = "~/.gitconfig.forkbombus"
-
-[includeIf "gitdir:~/Projects/venmo/"]
-	path = "~/.gitconfig.venmo"
-
 [filter "lfs"]
 	process = git-lfs filter-process
 	required = true
