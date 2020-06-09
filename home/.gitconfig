@@ -1,6 +1,7 @@
 [user]
 	email = james@notjam.es
 	name = James Ward
+	signingkey = D335E3AE3B71D896
 
 [core]
 	pager = less -R
@@ -44,6 +45,7 @@
 
 [commit]
 	template = ~/.gitmessage
+	gpgsign = true
 
 [merge]
 	ff = only
