@@ -17,12 +17,12 @@ hookdir=`dirname $0`
 
 for hook in $hookdir/$hookname.d/*; do
 	test -x "$hook" || continue
-	echo "$data" | "$hook"
+	echo "$data" | "$hook" "$@"
 	exitcodes+=($?)
 done
 
 if [[ -x "$(pwd)/.git/hooks/$hookname" ]]; then
-	"$(pwd)/.git/hooks/$hookname"
+	echo "$data" | "$(pwd)/.git/hooks/$hookname" "$@"
 	exitcodes+=($?)
 fi
 
