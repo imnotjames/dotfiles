@@ -44,7 +44,6 @@
 	followTags = true
 
 [commit]
-	template = ~/.gitmessage
 	gpgsign = true
 
 [merge]
