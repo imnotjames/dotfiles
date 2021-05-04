@@ -58,9 +58,6 @@
 [receive]
 	denyCurrentBranch = updateInstead
 
-[init]
-	templatedir = ~/.gittemplate
-
 [includeIf "gitdir:~/Projects/imnotjames/"]
 	path = "~/.gitconfig.imnotjames"
 
