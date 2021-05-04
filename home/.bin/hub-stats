@@ -1,0 +1,23 @@
+#!/bin/bash
+
+START_DATE="$(date -dlast-monday +%Y-%m-%d)T00:00:00Z"
+END_DATE="$(date -dmonday +%Y-%m-%d)T00:00:00Z"
+
+MERGED_PRS=$(hub pr list -s merged -L 100 -o merged --format '%mI %i %au%n' | awk -v start="${START_DATE}" -v end="${END_DATE}" '$1 >= start && $1 <= end { print $0; }')
+MERGED_PRS_COUNT=$(echo "$MERGED_PRS" | wc -l)
+MERGED_PRS_NODEPS_COUNT=$(echo "$MERGED_PRS" | awk -v dependabot="dependabot[bot]" '$3 != dependabot { print $0 }' |  wc -l)
+
+ISSUES_OPENED=$(hub issue --state open --sort opened --limit 100 --format '%cI %I %t%n' | awk -v start="${START_DATE}" -v end="${END_DATE}" '$1 >= start && $1 <= end { print $0; }')
+ISSUES_OPENED_COUNT=$(echo "$ISSUES_OPENED" | wc -l)
+
+ISSUES_CLOSED=$(hub issue --state closed  --limit 100 --format '%uI %I %t%n' | awk -v start="${START_DATE}" -v end="${END_DATE}" '$1 >= start && $1 <= end { print $0; }')
+ISSUES_CLOSED_COUNT=$(echo "$ISSUES_CLOSED" | wc -l)
+
+RELEASES=$(hub release --format '%pI%n' | awk -v start="${START_DATE}" -v end="${END_DATE}" '$1 >= start && $1 <= end { print $0; }')
+RELEASES_DAYS_COUNT=$(echo "$RELEASES" | sed 's/T.\+//' | sort | uniq | wc -l)
+
+echo "RELEASE DAYS:       $RELEASES_DAYS_COUNT"
+echo "PR MERGED:          $MERGED_PRS_COUNT"
+echo "PR MERGED (nodep):  $MERGED_PRS_NODEPS_COUNT"
+echo "ISSUE OPENED:       $ISSUES_OPENED_COUNT"
+echo "ISSUE CLOSED:       $ISSUES_CLOSED_COUNT"
