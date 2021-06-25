@@ -7,6 +7,10 @@
 
 # export JAVA_HOME=/usr/lib/jvm/default-runtime
 
+if [[ -f "/usr/share/nvm/init-nvm.sh" ]]; then
+	source /usr/share/nvm/init-nvm.sh
+fi
+
 export DOCKER_HOST=unix:///var/run/docker.sock
 
 export XDG_DATA_HOME="$HOME/.local/share"
