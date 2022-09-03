@@ -1,464 +1,289 @@
-1password 8.8.0-203
-accerciser 3.40.0-1
-ack 3.5.0-3
-acroread 9.5.5-20
-adobe-source-code-pro-fonts 2.038ro+1.058it+1.018var-1
-aisleriot 3.22.23-2
-alsa-utils 1.2.7-1
-android-apktool 2.6.1-1
-android-studio 2021.2.1.16-1
-android-udev 20220611-1
-anjuta 3.34.0-8
-arm-none-eabi-gcc 12.1.0-1
-arm-none-eabi-newlib 4.2.0.20211231-1
-aspell-en 2020.12.07-1
-audacity 1:3.1.3-2
-autoconf 2.71-1
-automake 1.16.5-1
-aws-cli 1.25.48-1
-bandit 1.7.4-1
-baobab 42.0-1
-bash 5.1.016-1
-bchunk 1.2.2-7
-bgb 1.5.9-2
-bind 9.18.6-1
-binutils 2.39-2
-bison 3.8.2-4
-bitwarden 2022.8.1-1
-bluez-firmware 1.2-9
-bluez-plugins 5.65-2
-bluez-utils 5.65-2
-brasero 3.12.3-1
-brother-hl2140 2.0.2_1-4
-byzanz 0.3.0.1-5
-bzip2 1.0.8-4
-calibre 6.3.0-1
-capslock-to-f15 0.0.4-1
-certbot 1.29.0-1
-chrome-gnome-shell 10.1-6
-chromium 104.0.5112.101-1
-chrpath 0.16-3
-circleci-cli-bin 0.1.20500-1
-clion 1:2022.2-1
-clion-cmake 1:2022.2-1
-clion-gdb 1:2022.2-1
-clion-jre 1:2022.2-1
-clion-lldb 1:2022.2-1
-composer 2.4.0-1
-coreutils 9.1-1
-cronie 1.6.1-1
-cryptsetup 2.5.0-1
-datagrip 2022.2.1-1
-datagrip-jre 2022.2.1-1
-dconf-editor 3.38.3-2
-devdocs-desktop 1.2.0-1
-device-mapper 2.03.16-2
-dhcp 4.4.3-3
-dhcpcd 9.4.1-1
-diffutils 3.8-1
-discord 0.0.19-1
-dive 0.10.0-1
-dmg2img 1.6.7-4
-dmidecode 3.4-1
-docker-compose 2.9.0-1
-dos2unix 7.4.3-1
-dosfstools 4.2-2
-downgrader-git 2.0.0.r158.f346695-3
-e2fsprogs 1.46.5-4
-ecryptfs-simple 2017-5
-ecryptfs-utils 111-5
-efibootmgr 18-1
-emulicious-bin 2022.07.31-1
-eog 42.3-1
-ephifonts-no-helvetica 20190307-1
-epiphany 42.4-1
-espeak-ng 1.51-1
-etc-update 2.3.99-2
-ethminer 0.19.0-2
-evolution-ews 3.44.4-1
-evtest 1.35-1
-exfat-utils 1.3.0-2
-fabric 2.7.1-1
-fakeroot 1.29-1
-fcgiwrap 1.1.0-8
-festival 2.5.0-4
-festival-english 2.5-2
-festival-us 2.5-2
-ffmpeg2.8 2.8.20-1
-file 5.42-1
-file-roller 3.42.0-1
-filesystem 2021.12.07-1
-findutils 4.9.0-1
-firefox 103.0.2-1
-firefox-developer-edition 104.0b9-1
-five-or-more 3.32.3-1
-flashplugin 32.0.0.465-1
-flex 2.6.4-3
-flyway 9.1.4-1
-four-in-a-row 3.38.1-1
-fwupd 1.8.3-1
-gawk 5.1.1-1
-gbdk-2020-bin 4.0.6-1
-gcc 12.1.1-4
-gcc-libs 12.1.1-4
-gconf-editor 3.0.1-5
-gdal 3.5.1-2
-gdm 42.0+r11+g4a52f026-1
-gedit 42.2-1
-gettext 0.21-2
-ghostwriter 2.1.4-1
-gifcurry 6.0.1.0_0-1
-gifsicle 1.93-2
-gimp 2.10.32-1
-gist 6.0.0-1
-git 2.37.2-1
-git-lfs 3.2.0-1
-gitg 2:41-1
-github-cli 2.14.4-1
-gitlab-runner 15.2.1-1
-glibc 2.36-2
-gnome-2048 3.38.2-1
-gnome-backgrounds 42.0-1
-gnome-books 40.0-1
-gnome-boxes 42.3-1
-gnome-builder 42.1-2
-gnome-calculator 42.2-1
-gnome-calendar 42.2-1
-gnome-characters 42.0-1
-gnome-chess 42.1-1
-gnome-clocks 42.0-1
-gnome-contacts 42.0-1
-gnome-devel-docs 40.3-1
-gnome-dictionary 40.0-1
-gnome-disk-utility 42.0-1
-gnome-documents 3.34.0+34+g678141fa-1
-gnome-font-viewer 42.0-1
-gnome-icon-theme-extras 3.12.0-5
-gnome-keyring 1:42.1-1
-gnome-klotski 3.38.2-1
-gnome-logs 42.0-1
-gnome-mahjongg 3.38.3-1
-gnome-maps 42.3-1
-gnome-menus 3.36.0-2
-gnome-mines 40.1-1
-gnome-music 1:42.1-1
-gnome-nettool 42.0-1
-gnome-nibbles 3.38.2-1
-gnome-notes 40.1-2
-gnome-photos 1:42.0-1
-gnome-remote-desktop 42.4-1
-gnome-robots 40.0-1
-gnome-screenshot 41.0+r25+g45f08f0-1
-gnome-shell 1:42.4-1
-gnome-shell-extensions 42.3-1
-gnome-shell-pomodoro 0.21.1-1
-gnome-software 42.4-1
-gnome-sound-recorder 42.0-1
-gnome-sudoku 42.0-1
-gnome-system-monitor 42.0-1
-gnome-taquin 3.38.1-1
-gnome-terminal 3.44.1-1
-gnome-tetravex 3.38.2-1
-gnome-todo 41.0+r106+gebc68374-1
-gnome-tweaks 42beta+r14+g2d9d76c-2
-gnome-user-docs 42.0-1
-gnome-user-share 3.34.0-2
-gnome-weather 42.0-1
-gnote 42.1-1
-gnu-cobol 3.0rc1-0
-gnu-netcat 0.7.1-8
-go-ethereum 1.10.21-1
-goland 2022.2.2-1
-goland-jre 2022.2.2-1
-google-chrome 104.0.5112.101-1
-gradle-doc 7.5.1-1
-gradle-src 7.5.1-1
-grep 3.7-1
-grub 2:2.06.r261.g2f4430cc0-1
-grunt-cli 1.4.3-2
-gstreamer-vaapi 1.20.3-1
-guake 3.9.0-2
-gucharmap 14.0.3-1
-gulp 4.0.2-3
-gvfs-afc 1.50.2-1
-gvfs-google 1.50.2-1
-gvfs-gphoto2 1.50.2-1
-gvfs-mtp 1.50.2-1
-gvfs-nfs 1.50.2-1
-gvfs-smb 1.50.2-1
-gzip 1.12-1
-hakuneko-desktop 6.1.7-2
-heroku-cli 7.62.0-1
-hexchat 2.16.1-2
-hexedit 1.6-1
-hfsprogs 540.1.linux3-4
-hitori 3.38.4-1
-hping 3.0.0-5
-hplip 1:3.22.6-1
-htop 3.2.1-1
-hub 2.14.2-3
-iagno 3.38.1-1
-imagewriter 1.10.1432200249.1d253d9.2.13-1
-inetutils 2.2-1
-inkscape 1.2.1-2
-intel-compute-runtime 22.30.23789-1
-intel-ucode 20220809-1
-intellij-idea-ultimate-edition 2022.2.1-1
-intellij-idea-ultimate-edition-jre 2022.2.1-1
-iproute2 5.19.0-1
-iputils 20211215-1
-iw 5.19-1
-jadx-unstable-bin 0.8.0.b589.0f27eba-1
-jd-gui-bin 1.6.6-1
-jekyll 4.2.2-1
-jfsutils 1.1.15-8
-john 1.9.0.jumbo1-7
-jp2a 1.1.1-1
-jpgcrush 0.0.0-2
-jq 1.6-4
-jsonix-schema-compiler 2.3.9-1
-jstest-gtk-git 0.1.0.r115.g420317b-1
-kazam 1.4.5-9
-kdenlive 22.04.3-1
-keybase-bin 6.0.2_20220610191041+a459abf326-1
-kicad 6.0.7-1
-kicad-library 6.0.7-1
-kind-bin 0.14.0-1
-kodi 19.4-5
-kubectl 1.24.3-2
-less 1:590-1
-libmicrodns 0.2.0-1
-libpng12 1.2.59-2
-libreoffice-still-sdk 7.3.5-2
-libtool 2.4.7-3
-libu2f-host 1.1.10-4
-liburcu 0.13.1-1
-libva-intel-driver 2.4.1-2
-libva-utils 2.15.0-1
-libvdpau-va-gl 0.4.2-3
-libvips 8.13.0-1
-licenses 20220125-1
-lightsoff 40.0.1-1
-linux 5.19.2.arch1-1
-linux-firmware 20220708.be7798e-1
-linuxconsole 1.8.1-1
-logrotate 3.20.1-1
-lshw B.02.19.2-4
-lsof 4.95.0-1
-lvm2 2.03.16-2
-lxrandr-gtk3 0.3.2-2
-m4 1.4.19-1
-make 4.3-3
-man-db 2.10.2-1
-man-pages 5.13-1
-maven 3.8.6-1
-mcomix 2.0.2-1
-mdadm 4.2-2
-meld 3.21.3-2
-mesa-demos 8.5.0-2
-mesa-utils 8.5.0-2
-metasploit 6.2.11-1
-modemmanager 1.18.2-1
-mousetweaks 3.32.0-2
-msgpack-c 4.0.0-1
-msodbcsql 18.0.1.1-1
-mtpaint 3.50.09-2
-mtr 0.95-3
-namcap 3.3.1-1
-nano 6.4-1
-nautilus 42.2-1
-netctl 1.28-1
-netlify 10.6.3-1
-networkmanager-dispatcher-ntpd 1.0-7
-networkmanager-openconnect 1.2.8-2
-networkmanager-openvpn 1.8.18-2
-networkmanager-vpnc 1.2.8-2
-ngrok 3.0.6-1
-nodejs-less 4.1.3-1
-notable-bin 1.8.4-5
-nrg2iso 0.4.1-2
-nvm 0.39.1-1
-obs-studio 27.2.4-2
-obsidian 0.15.9-1
-oldschool-pc-fonts 2.2-1
-openshot 2.6.1-5
-otf-fira-code 4-1
-otf-ipafont 003.03-8
-otf-overpass 3.0.5-1
-pacman 6.0.1-7
-pacman-contrib 1.6.0-1
-pam_mount 2.19-1
-pamtester 0.1.2-4
-pan 0.150-1
-patch 2.7.6-8
-patchelf 0.15.0-1
-pavucontrol 1:5.0+r35+g964f298-1
-pciutils 3.8.0-2
-peek 1.5.1-3
-pencil 3.1.0-7
-perl 5.36.0-1
-perl-image-exiftool 12.42-1
-php-gd 8.1.9-1
-php-mongodb 1.14.0-1
-php-pgsql 8.1.9-1
-php-sqlite 8.1.9-1
-phpstorm 2022.1.3b221.5921.28-2
-phpstorm-jre 2022.1.3b221.5921.28-2
-pidgin-otr 4.0.2-3
-pinta 2.0.2-1
-pkgconf 1.8.0-1
-pkgfile 21-2
-pngcrush 1.8.13-3
-pngquant 2.17.0-2
-polari 42.1-1
-powertop 2.14-1
-procps-ng 3.3.17-1
-psmisc 23.5-1
-pulseaudio-dlna 0.5.2.r152.gb0db813-6
-pulumi-bin 3.11.0-1
-puppet 7.18.0-1
-purple-plugin-pack 2.8.0-1
-pycharm-professional 2022.1.3-1
-pyenv 2.3.3-1
-python-cachy 0.3.0-7
-python-future 0.18.2-7
-python-libevdev 0.10-1
-python-pip 22.2.2-1
-python-poetry 1.1.14-2
-python-pyudev 0.22-7
-python-slacker 0.14.0-1
-python-virtualenv 20.11.0-1
-qemu-desktop 7.0.0-12
-quadrapassel 40.2-1
-re2c 3.0-1
-redis 7.0.4-1
-reflector 2021.11-5
-reiserfsprogs 3.6.27-3
-remmina 1:1.4.27-1
-rgbds-git 0.3.10.r0.g0759c98d-1
-rider 1:2022.1.2-1
-rpi-imager 1.7.2-1
-rubymine 2022.1.3-1
-rygel 1:0.40.4-1
-s-nail 14.9.24-1
-s3cmd 2.2.0-2
-s3fs-fuse 1.91-1
-scenarist 0.7.2.rc15-1
-screen 4.9.0-1
-screen-desktop-bin 4.0.16-1
-seahorse 1:42.0-1
-sed 4.8-1
-shadow 4.11.1-1
-simple-scan 42.1-1
-simplescreenrecorder 0.4.4-1
-slack-desktop 4.27.156-1
-smplayer 22.7.0-1
-solaar 1.1.4-2
-solidity 0.8.16-1
-speedtest-cli 2.1.3-2
-spotify 1:1.1.84.716-2
-sqlitebrowser 3.12.2-2
-steam 1.0.0.74-1
-stoplight-studio-appimage 2.8.1-1
-sudo 1.9.11.p3-1
-sushi 42.0-1
-swell-foop 41.1-1
-syncthing 1.20.3-1
-sysfsutils 2.1.1-1
-systemd-sysvcompat 251.4-1
-tailscale 1.28.0-1
-tailscale-systray-git 20220214-2
-tali 40.8-1
-tandem-chat 2.2.307-1
-tar 1.34-1
-terminus-font 4.49.1-2
-terraform 1.2.7-1
-testdisk 7.1-4
-texinfo 6.8-2
-thefuck 3.32-1
-tiled 1.9.1-1
-timeshift 22.06.4-1
-tk 8.6.12-1
-todoist 0.16.0-1
-tor 0.4.7.10-1
-totem 42.0-1
-traceroute 2.1.0-5
-transmission-gtk 3.00-4
-ttf-baekmuk 2.2-13
-ttf-courier-prime 1.203-5
-ttf-fira-code 6.2-2
-ttf-joypixels 7.0.0-1
-ttf-overpass 3.0.5-1
-typescript 4.7.4-1
-typora 1.3.6-1
-unityhub 3.2.0-1
-usbutils 014-2
-util-linux 2.38.1-1
-vbindiff 3.0_beta5-2
-vdpauinfo 1.4-2
-vi 1:070224-5
-vim 9.0.0135-1
-vinagre 3.22.0+35+gadcb63c-2
-vino 3.22.0+74+g7a95e10-1
-visual-studio-code-bin 1.69.2-1
-visualvm 2.1.3-1
-vlc 3.0.17.4-7
-vokoscreen 3.3.0-1
-webstorm 2022.1.3b221.5921.27-1
-webstorm-jre 2022.1.3b221.5921.27-1
-wgetpaste 2.32-1
-which 2.21-5
-wine 7.15-1
-wine-mono 7.3.0-1
-winetricks-git 20220411.r10.g9c97d44b-1
-x11vnc 1:0.9.16-5
-xdebug 3.1.4-1
-xdg-user-dirs-gtk 0.10+9+g5b7efc6-3
-xf86-input-synaptics 1.9.2-1
-xf86-input-vmmouse 13.1.0-6
-xf86-input-void 1.4.1-6
-xf86-video-ati 1:19.1.0.r9.g5eba006e-2
-xf86-video-intel 1:2.99.917+916+g31486f40-2
-xf86-video-nouveau 1.0.17-2
-xf86-video-openchrome 0.6.0.r754.g15c868a-1
-xf86-video-vesa 2.5.0-3
-xf86-video-vmware 13.3.0-4
-xf86-video-voodoo 1.2.5-12
-xfsprogs 5.18.0-1
-xkbset 0.6-1
-xorg-docs 1.7.2-1
-xorg-fonts-100dpi 1.0.3-7
-xorg-fonts-75dpi 1.0.3-7
-xorg-iceauth 1.0.9-1
-xorg-sessreg 1.1.2-3
-xorg-smproxy 1.0.6-4
-xorg-x11perf 1.6.1-3
-xorg-xbacklight 1.2.3-3
-xorg-xcmsdb 1.0.6-1
-xorg-xcursorgen 1.0.7-3
-xorg-xdriinfo 1.0.6-3
-xorg-xev 1.2.5-1
-xorg-xgamma 1.0.6-4
-xorg-xinput 1.6.3-3
-xorg-xkbevd 1.1.4-4
-xorg-xkbutils 1.0.5-1
-xorg-xkill 1.0.5-3
-xorg-xlsatoms 1.1.3-3
-xorg-xlsclients 1.1.4-3
-xorg-xpr 1.1.0-1
-xorg-xprop 1.2.5-1
-xorg-xrefresh 1.0.7-1
-xorg-xsetroot 1.1.2-3
-xorg-xvinfo 1.1.4-3
-xorg-xwd 1.0.8-1
-xorg-xwud 1.0.6-1
-yamllint 1.27.1-1
-yarn 1.22.19-1
-yay 11.2.0-1
-youtube-dl 2021.12.17-1
-youtubemusic-nativefier 1.1-4
-yubikey-personalization 1.20.0-3
-yubioath-desktop 5.1.0-3
-zettlr 2.3.0-1
-zoom 5.11.1-1
-zulip-desktop 5.9.3-1
+1password
+acroread
+adobe-source-code-pro-fonts
+alsa-utils
+android-apktool
+android-studio
+android-udev
+arm-none-eabi-gcc
+arm-none-eabi-newlib
+audacity
+aws-cli
+bandit
+bchunk
+bgb
+bind
+binutils
+bitwarden
+bluez-firmware
+bluez-plugins
+bluez-utils
+brother-hl2140
+byzanz
+calibre
+certbot
+chrome-gnome-shell
+chromium
+circleci-cli-bin
+clion
+composer
+coreutils
+cronie
+cryptsetup
+datagrip
+devdocs-desktop
+dhcpcd
+diffutils
+discord
+dive
+dmg2img
+dmidecode
+docker-compose
+dos2unix
+dosfstools
+downgrader-git
+ecryptfs-utils
+efibootmgr
+emulicious-bin
+ephifonts-no-helvetica
+espeak-ng
+exfat-utils
+fcgiwrap
+ffmpeg2.8
+file
+firefox
+firefox-developer-edition
+fwupd
+gdm
+ghostwriter
+gifsicle
+gimp
+gist
+git
+git-lfs
+gitg
+github-cli
+gitlab-runner
+gnome-devel-docs
+gnome-shell
+gnome-shell-extensions
+gnome-shell-pomodoro
+gnome-tweaks
+gnu-cobol
+gnu-netcat
+goland
+google-chrome
+grep
+gstreamer-vaapi
+gvfs-afc
+gvfs-google
+gvfs-gphoto2
+gvfs-mtp
+gvfs-nfs
+gvfs-smb
+gzip
+hakuneko-desktop
+heroku-cli
+hexchat
+hexedit
+hfsprogs
+hplip
+htop
+hub
+inetutils
+inkscape
+intellij-idea-ultimate-edition
+iproute2
+iputils
+iw
+jadx-unstable-bin
+jd-gui-bin
+jekyll
+jfsutils
+john
+jp2a
+jpgcrush
+jq
+jsonix-schema-compiler
+kazam
+kdenlive
+keybase-bin
+kicad
+kicad-library
+kind-bin
+kubectl
+less
+libmicrodns
+libreoffice-still-sdk
+libtool
+libu2f-host
+liburcu
+libva-intel-driver
+libva-utils
+libvdpau-va-gl
+libvips
+lshw
+lsof
+lxrandr-gtk3
+m4
+man-db
+man-pages
+maven
+mcomix
+mdadm
+meld
+mesa-demos
+mesa-utils
+metasploit
+modemmanager
+mousetweaks
+msgpack-c
+msodbcsql
+mtpaint
+mtr
+namcap
+nano
+netctl
+netlify
+networkmanager-dispatcher-ntpd
+networkmanager-openconnect
+networkmanager-openvpn
+networkmanager-vpnc
+networkmanager
+ngrok
+nodejs-less
+notable-bin
+nrg2iso
+nvm
+obs-studio
+obsidian
+oldschool-pc-fonts
+openshot
+otf-fira-code
+otf-ipafont
+otf-overpass
+pacman-contrib
+pam_mount
+pamtester
+pan
+pavucontrol
+pciutils
+peek
+pencil
+perl
+perl-image-exiftool
+phpstorm
+pinta
+pkgconf
+pkgfile
+pngcrush
+pngquant
+polari
+powertop
+procps-ng
+psmisc
+pulseaudio-dlna
+pulumi-bin
+puppet
+pycharm-professional
+pyenv
+python-cachy
+python-future
+python-libevdev
+python-pip
+python-poetry
+python-pyudev
+python-slacker
+python-virtualenv
+qemu-desktop
+quadrapassel
+re2c
+redis
+reflector
+reiserfsprogs
+remmina
+rgbds-git
+rider
+rpi-imager
+rubymine
+rygel
+s-nail
+s3cmd
+s3fs-fuse
+scenarist
+screen
+screen-desktop-bin
+shadow
+simple-scan
+simplescreenrecorder
+slack-desktop
+smplayer
+solaar
+solidity
+speedtest-cli
+spotify
+sqlitebrowser
+steam
+stoplight-studio-appimage
+sudo
+sushi
+swell-foop
+syncthing
+sysfsutils
+systemd-sysvcompat
+tailscale
+tailscale-systray-git
+tali
+tandem-chat
+terminus-font
+terraform
+testdisk
+texinfo
+thefuck
+tiled
+timeshift
+tk
+todoist
+tor
+traceroute
+transmission-gtk
+ttf-baekmuk
+ttf-courier-prime
+ttf-fira-code
+ttf-joypixels
+ttf-overpass
+typescript
+typora
+unityhub
+usbutils
+util-linux
+vbindiff
+vdpauinfo
+vi
+vim
+vino
+visual-studio-code-bin
+visualvm
+vlc
+vokoscreen
+webstorm
+webstorm-jre
+wgetpaste
+which
+wine
+wine-mono
+winetricks-git
+x11vnc
+xdebug
+xdg-user-dirs-gtk
+xfsprogs
+xkbset
+yamllint
+yay
+youtube-dl
+youtubemusic-nativefier
+yubikey-personalization
+yubioath-desktop
+zettlr
+zoom
+zulip-desktop
