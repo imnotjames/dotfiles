@@ -42,6 +42,7 @@
 [push]
 	default = simple
 	followTags = true
+	autoSetupRemote = true
 
 [commit]
 	gpgsign = true
