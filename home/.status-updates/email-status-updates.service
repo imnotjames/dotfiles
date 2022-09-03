@@ -1,6 +1,0 @@
-[Unit]
-Description=Email people a status update because I can't be arsed
-
-[Service]
-Type=oneshot
-ExecStart=/bin/sh %h/.status-updates/send-status-update.sh

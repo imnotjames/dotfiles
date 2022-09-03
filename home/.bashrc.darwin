@@ -1,5 +1,0 @@
-# Darwin-specfic bashrc
-
-export TERM=xterm-256color
-
-export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"

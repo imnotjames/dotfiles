@@ -1,9 +1,0 @@
-#!/usr/bin/env sh
-
-cat "$1" | \
-tr ' ' '\n' | \
-awk '{ $0=tolower($0); gsub(/(^[^a-z]+)|([^a-z]+$)/, ""); print; }' RS=' ' | \
-grep -vP '^$' | \
-grep -vP '^\s*(an|a|the|of)\s*$' | \
-sort | uniq -c | sort -g -r
-

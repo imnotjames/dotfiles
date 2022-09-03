@@ -1,6 +1,0 @@
-#!/usr/bin/env sh
-
-BRANCH_SLUG=$(/usr/bin/env git current-branch | sed 's/[^a-zA-Z0-9]/-/g')
-REPO_NAME=$(/usr/bin/env git repository-name | sed 's/[^a-zA-Z0-9]/-/g')
-
-echo "${REPO_NAME}-${BRANCH_SLUG}"

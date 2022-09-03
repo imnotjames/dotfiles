@@ -1,9 +1,0 @@
-#!/usr/bin/env sh
-
-if [ -d .git/svn  ] && [ x != x"$(ls -A .git/svn/)" ]; then
-	/usr/bin/env git svn-diff -M --no-prefix --full-index
-else
-	MERGE_BASE=$(git merge-base ${1-'origin/master'} ${2-'HEAD'})
-
-	/usr/bin/env git diff -M --minimal --full-index $MERGE_BASE ${2-'HEAD'}
-fi
