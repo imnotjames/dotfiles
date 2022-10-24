@@ -7,6 +7,19 @@
 
 OPERATING_SYSTEM="$(uname -s | tr '[:upper:]' '[:lower:]')"
 
+export AWS_SHARED_CREDENTIALS_FILE="$XDG_CONFIG_HOME"/aws/credentials
+export AWS_CONFIG_FILE="$XDG_CONFIG_HOME"/aws/config 
+
+export GOPATH="$XDG_DATA_HOME"/go
+
+export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle 
+
+export GTK_RC_FILES="$XDG_CONFIG_HOME"/gtk-1.0/gtkrc 
+export GTK2_RC_FILES="$XDG_CONFIG_HOME"/gtk-2.0/gtkrc 
+
+export XCOMPOSEFILE="$XDG_CONFIG_HOME"/X11/xcompose
+export XCOMPOSECACHE="$XDG_CACHE_HOME"/X11/xcompose 
+
 if [[ -f "${HOME}/.bashrc.${OPERATING_SYSTEM}" ]]; then
 	source "${HOME}/.bashrc.${OPERATING_SYSTEM}"
 fi
@@ -20,13 +33,15 @@ if hash thefuck 2>/dev/null; then
 	eval $(thefuck --alias)
 fi
 
+
+export RBENV_ROOT="$XDG_DATA_HOME"/rbenv
 if hash rbenv 2>/dev/null; then
 	eval "$(rbenv init -)"
 fi
 
+export PYENV_ROOT="$XDG_DATA_HOME"/pyenv
+export PATH="$PYENV_ROOT/bin:$PATH"
 if hash pyenv 2>/dev/null; then
-	export PYENV_ROOT="$HOME/.pyenv"
-	export PATH="$PYENV_ROOT/bin:$PATH"
 	eval "$(pyenv init --path)"
 fi
 
